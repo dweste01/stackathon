@@ -1,0 +1,46 @@
+{
+  "name": "stackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w & nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dweste01/stackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dweste01/stackathon/issues"
+  },
+  "homepage": "https://github.com/dweste01/stackathon#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel": "^6.23.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "chai": "^4.0.2",
+    "enzyme": "^2.8.2",
+    "express": "^4.15.3",
+    "history": "^4.6.2",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "mocha": "^3.4.2",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.6.1"
+  }
+}
