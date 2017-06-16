@@ -10,6 +10,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/api', require('./api'));
+
 // bundle needs this line
 app.use('/files', express.static(path.join(__dirname, '../public')));
 
