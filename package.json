@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w & nodemon ./server/index.js"
+    "start": "webpack -w & nodemon ./server/index.js",
+    "mobile-start": "react-native-scripts start"
   },
   "repository": {
     "type": "git",
@@ -25,22 +26,32 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "chai": "^4.0.2",
+    "css-loader": "^0.28.4",
+    "d3": "^4.9.1",
+    "d3-axis": "^1.0.8",
+    "d3-scale": "^1.0.6",
     "enzyme": "^2.8.2",
     "express": "^4.15.3",
     "history": "^4.6.2",
     "jquery": "^3.2.1",
+    "jsdom": "^11.0.0",
     "lodash": "^4.17.4",
+    "mapbox-gl": "^0.38.0",
     "mocha": "^3.4.2",
     "morgan": "^1.8.2",
+    "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
+    "rd3": "^0.7.4",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
+    "react-native": "^0.45.1",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "style-loader": "^0.18.2",
     "webpack": "^2.6.1"
   }
 }

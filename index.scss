@@ -1,0 +1,65 @@
+#logo {
+	margin-top: 21px;
+	margin-left: 6px;
+	width: 83px;
+	height: 80px;
+	position: fixed;
+	z-index: 10;
+}
+
+#nav-logo {
+	margin-left: 45%;
+	position: fixed;
+	border-radius: 100%;
+	width: 120px;
+	height: 120px;
+	border: 6px;
+	border-color: black;
+	z-index: 9;
+	background-color: white;
+}
+
+
+.navbar-offset {
+	padding-top: 70px;
+}
+
+#mapid {
+	height: 500px;
+}
+
+#myNav {
+	background-color: white;
+	height: 65px;
+	width: 100%;
+	z-index: 9;
+	position: fixed;
+	float: left;
+}
+
+.resButton {
+	border: 2px;
+	border-color: black;
+	background-color: white;
+	color: black;
+	&:hover {
+		background-color: white;
+	}
+	&:focus {
+		background-color: white;
+		color: black;
+	}
+}
+.activeResButton {
+	border: 0px;
+	background-color: black;
+	color: white;
+	&:hover {
+		background-color: black;
+		color: white;
+	}
+	&:focus {
+		background-color: black;
+		color: white;
+	}
+}
