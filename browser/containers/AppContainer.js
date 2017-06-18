@@ -3,14 +3,18 @@ import axios from 'axios';
 import { hashHistory } from 'react-router';
 import {connect} from 'react-redux';
 import MyApp from './AppComponent'
-import {toggleDeliveryAction, selectRestaurant, yelpRestaurantReviews, setYelpRating} from '../action-creators'
+import {toggleDeliveryAction, selectRestaurant,
+	    yelpRestaurantReviews, setYelpRating,
+		setMinPrice, setMaxPrice} from '../action-creators'
 
 const mapStateToProps = (state) => {
 	return {
 		delivery: state.delivery,
 		selectedRestaurant: state.selectedRes,
 		yelpInfo: state.yelpInfo,
-		yelpRating: state.yelpRating
+		yelpRating: state.yelpRating,
+		minPrice: state.minPrice,
+		maxPrice: state.maxPrice
 	}
 }
 
@@ -39,6 +43,12 @@ const mapDispatchToProps = (dispatch) => {
 				})
 			})
 			.catch(console.log);
+		},
+		toggleMinPrice: (price) => {
+			dispatch(setMinPrice(price));
+		},
+		toggleMaxPrice: (price) => {
+			dispatch(setMaxPrice(price));
 		}
 	}
 }

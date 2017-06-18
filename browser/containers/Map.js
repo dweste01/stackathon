@@ -11,9 +11,9 @@ export default class MapComp extends React.Component {
 			currPos: {lat: 40.750120, lng: -73.985099}, // default location: nyc midtown,
 			mapObj: {},
 			colors: {1: '#00ff77',
-					2: '#00db66',
-					3: '#018c41',
-					4: '#015e2c'},
+					 2: '#00db66',
+					 3: '#018c41',
+					 4: '#015e2c'}
 		}
 		this.markersShowing = [];
 		this.places = [];
@@ -25,7 +25,7 @@ export default class MapComp extends React.Component {
 		// set up map
 		const map = new google.maps.Map(document.getElementById('mapid'), {
 		  center: this.state.currPos,
-		  zoom: 10
+		  zoom: 12
 		});
 		this.setState({'mapObj': map}) // access map obj in other fns
 		if (navigator.geolocation) {	// if you can get actual location, move to actual location
@@ -33,12 +33,13 @@ export default class MapComp extends React.Component {
 				this.setState({'currPos': {lat: pos.coords.latitude,
 										   lng: pos.coords.longitude}})
 				map.setCenter(this.state.currPos);
+				map.setZoom(13)
 			})
 		}
 		// re-render when you settle on a new spot for 1 sec
 		map.addListener('center_changed', () => {
 			window.setTimeout(() => {
-				this.setState({'currPos': {lat: map.getCenter().lat(), lng: map.getCenter().lng()}})
+				this.setState({'currPos': {lat: map.getCenter().lat(), lng: map.getCenter().lng()}});
 			}, 1000)
 		})
 	}
@@ -59,9 +60,14 @@ export default class MapComp extends React.Component {
 		// get nearby places
 		const service = new google.maps.places.PlacesService(this.state.mapObj);
 		service.nearbySearch({location: this.state.currPos,
-							    radius: 10000,
-							     types: resTypes},
+							    // radius: 20000,
+							    rankBy: google.maps.places.RankBy.DISTANCE,
+							    minPriceLevel: this.props.minPrice,
+							    maxPriceLevel: this.props.maxPrice,
+							    types: resTypes},
 							  (results, status) => {
+							  	console.log("results: ", results)
+							  	console.log("min and max: ", this.props.minPrice, this.props.maxPrice)
 							  	if (status === google.maps.places.PlacesServiceStatus.OK) {
 							  		results.forEach(place => {
 							  			let marker = new google.maps.Marker({
