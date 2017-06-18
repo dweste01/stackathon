@@ -1,27 +1,27 @@
-import axios from "axios";
-import '../secrets'
+// import axios from "axios";
+// import '../secrets'
 
-// export const RETRIEVE_DATA = "RETRIEVE_DATA"
 export const TOGGLE_DELIVERY = "TOGGLE_DELIVERY"
 export const SELECT_RESTAURANT = "SELECT_RESTAURANT"
+export const YELP_INFO = "YELP_INFO"
+export const YELP_RATING = "YELP_RATING"
 
 export const toggleDeliveryAction = delivery => ({
 	type: TOGGLE_DELIVERY,
 	delivery
 })
 
-export const selectRestaurant = selectedRestaurant => ({
+export const selectRestaurant = selectedRes => ({
 	type: SELECT_RESTAURANT,
-	selectedRestaurant
+	selectedRes
 })
 
-// export const getSelectedRestaurant = googleId => {
-// 	return dispatch => {
-// 		axios.get('/api/googlePlace/${googleId}')
-// 		.then(result => {
-// 			console.log('got result')
-// 			res.send(result);
-// 		})
-// 		.catch(console.log);
-// 	}
-// }
+export const yelpRestaurantReviews = yelpInfo => ({
+	type: YELP_INFO,
+	yelpInfo
+})
+
+export const setYelpRating = yelpRating => ({
+	type: YELP_RATING,
+	yelpRating
+})

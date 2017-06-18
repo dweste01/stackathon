@@ -9,7 +9,9 @@ export default (props) => {
 			<div>
 				<Navbar toggleDelivery={props.toggleDelivery} delivery={props.delivery} />
 				<div className='navbar-offset'>
-					<MapComp deliveryOnly={props.delivery} setSelectedRestaurant={props.setSelectedRestaurant}/>
+					<MapComp deliveryOnly={props.delivery} selectedRestaurant={props.selectedRestaurant}
+							setSelectedRestaurant={props.setSelectedRestaurant} yelpRating={props.yelpRating}
+							yelpInfo={props.yelpInfo}/>
 				</div>
 			</div>)
 }

@@ -1,8 +1,11 @@
-import { TOGGLE_DELIVERY, SELECT_RESTAURANT } from '../action-creators'
+import { TOGGLE_DELIVERY, SELECT_RESTAURANT, YELP_INFO, YELP_RATING} from '../action-creators'
 
 
 const initialState = {
-	delivery: false
+	delivery: false,
+  selectedRes: {},
+  yelpInfo: {},
+  yelpRating: ''
 }
 
 export default function (state = initialState, action) {
@@ -15,8 +18,13 @@ export default function (state = initialState, action) {
   		newState.delivery = action.delivery;
   		break;
     case SELECT_RESTAURANT:
-      console.log('selecting restaurant...')
-      newState.selectedRestaurant = action.selectedRestaurant;
+      newState.selectedRes = action.selectedRes;
+      break;
+    case YELP_INFO:
+      newState.yelpInfo = action.yelpInfo;
+      break;
+    case YELP_RATING:
+      newState.yelpRating = action.yelpRating;
       break;
     default:
       return state;
