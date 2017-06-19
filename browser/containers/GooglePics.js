@@ -6,7 +6,7 @@ export default class GooglePics extends React.Component {
 	}
 
 	render() {
-		return(<div>Carousel of Google photos go here
+		return(<div>
 				<div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 				  <div className="carousel-inner">
 				  {

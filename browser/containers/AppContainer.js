@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
 			let res = {};
 			axios.get(`/api/googlePlace/${id}`)
 			.then(result => {
+				console.log('result back from google places: ', result.data)
 				res = result.data.result;
 				dispatch(selectRestaurant(res))
 			})

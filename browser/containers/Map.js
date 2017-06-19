@@ -13,7 +13,8 @@ export default class MapComp extends React.Component {
 			colors: {1: '#00ff77',
 					 2: '#00db66',
 					 3: '#018c41',
-					 4: '#015e2c'}
+					 4: '#015e2c'},
+			selectedMarker: {}
 		}
 		this.markersShowing = [];
 		this.places = [];
@@ -48,11 +49,15 @@ export default class MapComp extends React.Component {
 		let infoWindow = new google.maps.InfoWindow({ content: `<p>${marker.title}</p>`});
 		infoWindow.open(this.state.mapObj, marker)
 		this.props.setSelectedRestaurant(result.place_id); // this searches for the google Place
+		this.setState({'selectedMarker': {'marker': marker, 'info': infoWindow}})
 	}
 
 	render() {
 		while(this.markersShowing.length) {
 			this.markersShowing.pop().marker.setMap(null)
+		}
+		if (this.state.selectedMarker.info) {
+			this.state.selectedMarker.info.open(this.state.mapObj, this.state.selectedMarker.marker);
 		}
 		let resTypes = ['restaurant']
 		if (this.props.deliveryOnly) resTypes = ['meal_delivery']
