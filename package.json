@@ -33,6 +33,7 @@
     "d3-scale": "^1.0.6",
     "enzyme": "^2.8.2",
     "express": "^4.15.3",
+    "form-data": "^2.2.0",
     "history": "^4.6.2",
     "jquery": "^3.2.1",
     "jsdom": "^11.0.0",
@@ -54,6 +55,7 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^2.6.1"
+    "webpack": "^2.6.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }

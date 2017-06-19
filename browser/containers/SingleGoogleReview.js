@@ -16,7 +16,7 @@ export default class SingleGoogleReview extends React.Component {
 		}
 
 		return (
-		 	<div key={review.time} className="panel panel-default" style={{'marginTop': 20}}>
+		 	<div key={review.time} className="panel panel-default" style={{'marginTop': 20, 'clear': 'left'}}>
 				<div className="panel-body">
 				 	<img src={review.profile_photo_url} width='20' height='20' />
 				 	<span>  {stars}</span>

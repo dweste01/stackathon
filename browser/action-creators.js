@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 
 export const TOGGLE_DELIVERY = "TOGGLE_DELIVERY"
 export const SELECT_RESTAURANT = "SELECT_RESTAURANT"
@@ -35,3 +37,11 @@ export const setMaxPrice = maxPrice => ({
 	type: SET_MAX_PRICE,
 	maxPrice
 })
+
+export const getAccessToken = code => {
+	return dispatch => {
+		axios.get(`/api/insta/${code}`)
+		.then()
+		.catch(console.log)
+	}
+}

@@ -25,14 +25,14 @@ export default class ResReviews extends React.Component {
 				  }
 				    <div className="panel panel-default col-md-6">
 				  		<div className="panel-body">
-				  			<img src='files/google.png' height='50%' width='50%' className='col-md-6 col-md-offset-3'></img>
+				  			<a href={this.props.selectedRes.url}><img src='files/google.png' height='50%' width='50%' className='col-md-6 col-md-offset-3'></img></a>
 							<GoogleReview res={this.props.selectedRes} />
 				  		</div>
 				  	</div>
 
 				  	<div className="panel panel-default col-md-6">
 				  		<div className="panel-body">
-				  			<img src='files/yelp.png' id='yelp' height='50%' width='50%' className='col-md-6 col-md-offset-3' />
+				  			<a href={this.props.yelpInfo.url}><img src='files/yelp.png' id='yelp' height='50%' width='50%' className='col-md-6 col-md-offset-3'></img></a>
 							<YelpReview rating={this.props.yelpRating} reviews={this.props.yelpInfo} />
 				  		</div>
 				  	</div>

@@ -33,7 +33,7 @@ export default class MapComp extends React.Component {
 				this.setState({'currPos': {lat: pos.coords.latitude,
 										   lng: pos.coords.longitude}})
 				map.setCenter(this.state.currPos);
-				map.setZoom(13)
+				map.setZoom(15)
 			})
 		}
 		// re-render when you settle on a new spot for 1 sec
@@ -60,7 +60,8 @@ export default class MapComp extends React.Component {
 		// get nearby places
 		const service = new google.maps.places.PlacesService(this.state.mapObj);
 		service.nearbySearch({location: this.state.currPos,
-							    rankBy: google.maps.places.RankBy.DISTANCE,
+								radius: 1000,
+							    rankBy: google.maps.places.RankBy.RELEVANCE,
 							    minPriceLevel: this.props.minPrice,
 							    maxPriceLevel: this.props.maxPrice,
 							    types: resTypes},

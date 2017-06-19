@@ -1,8 +1,7 @@
 import React from 'react'
 import GooglePics from './GooglePics'
-// if (process.env.NODE_ENV != 'production') {
-// 	require('../../secrets')
-// }
+// require('../../secrets')
+
 
 export default class Photos extends React.Component {
 	constructor(props) {
@@ -21,7 +20,7 @@ export default class Photos extends React.Component {
 				  <img src="/files/google.png" height="50%" width="50%" />
 				  <GooglePics pics={this.props.googlePics} />
 				  <button onClick={this.instaLogin} className="btn btn-default">
-					  <a target="_blank" href={`https://api.instagram.com/oauth/authorize/?client_id=${process.env.INSTA_CID}&redirect_uri=localhost:3000}&response_type=code`}>Click Here for Instagram Photos</a>
+					  <a target="_blank" href={`https://api.instagram.com/oauth/authorize/?client_id=${process.env.INSTA_CID}&redirect_uri=https://live2eat.herokuapp.com/&response_type=code`}>Click Here for Instagram Photos</a>
 				  </button>
 				  </div>
 				</div>
