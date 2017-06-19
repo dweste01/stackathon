@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server/index.js",
     "start-dev": "webpack -w & nodemon ./server/index.js",
-    "mobile-start": "react-native-scripts start"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
