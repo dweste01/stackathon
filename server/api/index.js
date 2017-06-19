@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const axios = require('axios');
 
-require('../../secrets')
+// require('../../secrets')
 
 
 router.use('/googlePlace/:placeId', (req, res, next) => {
