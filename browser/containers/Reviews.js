@@ -25,7 +25,7 @@ export default class ResReviews extends React.Component {
 				  }
 				    <div className="panel panel-default col-md-6">
 				  		<div className="panel-body">
-				  			<a href={this.props.selectedRes.url}><img src='files/google.png' height='50%' width='50%' className='col-md-6 col-md-offset-3'></img></a>
+				  			<a target="_blank" href={this.props.selectedRes.url}><img src='files/google.png' height='50%' width='50%' className='col-md-6 col-md-offset-3'></img></a>
 							<GoogleReview res={this.props.selectedRes} />
 				  		</div>
 				  	</div>

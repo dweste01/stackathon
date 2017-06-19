@@ -26,7 +26,7 @@ export default class YelpReview extends React.Component {
 							}
 							return (<div key={review.time_created} className="panel panel-default" style={{'marginTop': 20, 'clear': 'left'}}>
 										<div className="panel-body">
-											<a href={review.url}>{stars}</a>
+											<a target="_blank" href={review.url}>{stars}</a>
 											<p>{review.text}</p>
 										</div>
 									</div>)
