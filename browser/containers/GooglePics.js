@@ -10,12 +10,12 @@ export default class GooglePics extends React.Component {
 				<div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 				  <div className="carousel-inner">
 				  {
-				  	this.props.pics && this.props.pics.map(pic => {
-				  				  	return (
-				  				  		<div className="item active">
-				  					      <div className="d-block img-fluid"> {pic.html_attributions} </div>
-				  					    </div>)
-				  				  })
+				  	// this.props.pics && this.props.pics.map(pic => {
+				  	// 			  	return (
+				  	// 			  		<div className="item active">
+				  	// 				      <div className="d-block img-fluid"> {pic.html_attributions} </div>
+				  	// 				    </div>)
+				  	// 			  })
 				  }
 				    <div className="item active">
 				      <img className="d-block img-fluid" src="/files/google.png" width="50%" height="50%" alt="First slide" />
