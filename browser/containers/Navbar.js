@@ -27,6 +27,7 @@ export default class Navbar extends React.Component {
 					</div>
 
 					<div className="col-lg-2" id="nav-logo">
+						<h4 style={{'marginTop': 2, 'marginLeft': 8, 'marginBottom': 2, 'fontWeight': 'bold'}}>LIVE2EAT</h4>
 					   	<img id="logo" src="files/food.png" />
 				    </div>
 
