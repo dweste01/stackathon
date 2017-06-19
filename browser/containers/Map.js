@@ -60,7 +60,6 @@ export default class MapComp extends React.Component {
 		// get nearby places
 		const service = new google.maps.places.PlacesService(this.state.mapObj);
 		service.nearbySearch({location: this.state.currPos,
-							    // radius: 20000,
 							    rankBy: google.maps.places.RankBy.DISTANCE,
 							    minPriceLevel: this.props.minPrice,
 							    maxPriceLevel: this.props.maxPrice,

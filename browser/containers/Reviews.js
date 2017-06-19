@@ -1,6 +1,7 @@
 import React from 'react'
 import GoogleReview from './GoogleReview'
 import YelpReview from './YelpReview'
+import Photos from './Photos'
 
 export default class ResReviews extends React.Component {
 	constructor(props) {
@@ -36,7 +37,14 @@ export default class ResReviews extends React.Component {
 				  		</div>
 				  	</div>
 
+				  	<div className="panel panel-default col-md-6 col-md-offset-3">
+				  		<div className="panel-body">
+				  		<Photos googlePics={restaurant.photos} />
+				  		</div>
+				  	</div>
+
 				  </div>
 				</div>)
 	}
+							// <Insta latLng=restaurant />
 }
