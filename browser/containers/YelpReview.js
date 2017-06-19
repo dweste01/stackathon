@@ -12,7 +12,7 @@ export default class YelpReview extends React.Component {
 		if (rating >= 4) {
 			color = 'green'
 		} else if (rating >= 3) {
-			color = '#fcf400'
+			color = '#fce200'
 		} else color = 'red'
 
 		return (<div>

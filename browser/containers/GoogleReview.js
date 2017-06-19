@@ -14,7 +14,7 @@ export default class GoogleReview extends React.Component {
 		if (this.props.res.rating >= 4) {
 			color = 'green'
 		} else if (this.props.res.rating >= 3) {
-			color = '#fcf400'
+			color = '#fce200'
 		} else color = 'red'
 
 		return (<div >
