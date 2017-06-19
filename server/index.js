@@ -3,7 +3,6 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-// const FormData = require('form-data')
 const axios = require('axios')
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let instaAxios = axios.create({
@@ -37,9 +36,17 @@ app.get('/', (req, res, next) => {
 		// formData.append('redirect_uri', 'https://live2eat.herokuapp.com/')
 		// formData.append('code', c)
 
-		// let ajaxReq = new XMLHttpRequest();
-		// ajaxReq.open("POST", formData, true);
-		// ajaxReq.send();
+		let formData = {
+			'client_id': process.env.INSTA_CID,
+			'client_secret': process.env.INSTA_SECRET,
+			'grant_type': 'authorization_code',
+			'redirect_uri': 'https://live2eat.herokuapp.com/',
+			'code': c
+		}
+
+		let ajaxReq = new XMLHttpRequest();
+		ajaxReq.open("POST", formData, true);
+		ajaxReq.send();
 
 		// $.ajax('https://api.instagram.com/oauth/access_token', {
 		// 	method: 'POST',
