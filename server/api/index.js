@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const axios = require('axios');
-if (process.env.NODE_ENV != 'production') {
-	require('../../secrets')
-}
+// if (process.env.NODE_ENV != 'production') {
+// 	require('../../secrets')
+// }
 
 router.use('/googlePlace/:placeId', (req, res, next) => {
 	axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${req.params.placeId}&key=${process.env.GOOGLE_API_KEY}`)

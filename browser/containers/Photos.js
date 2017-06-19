@@ -1,8 +1,8 @@
 import React from 'react'
 import GooglePics from './GooglePics'
-if (process.env.NODE_ENV != 'production') {
-	require('../../secrets')
-}
+// if (process.env.NODE_ENV != 'production') {
+// 	require('../../secrets')
+// }
 
 export default class Photos extends React.Component {
 	constructor(props) {
