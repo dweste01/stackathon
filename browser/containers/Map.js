@@ -1,6 +1,5 @@
 
 import React from 'react'
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
 import Reviews from './Reviews'
 
 
@@ -24,11 +23,12 @@ export default class MapComp extends React.Component {
 
 	componentDidMount() {
 		// set up map
+		console.log("Hello")
 		const map = new google.maps.Map(document.getElementById('mapid'), {
 		  center: this.state.currPos,
 		  zoom: 12
 		});
-		this.setState({'mapObj': map}) // access map obj in other fns
+		this.setState({'mapObj': map}) // access map obj in render function
 		if (navigator.geolocation) {	// if you can get actual location, move to actual location
 			navigator.geolocation.getCurrentPosition(pos => {
 				this.setState({'currPos': {lat: pos.coords.latitude,
@@ -71,8 +71,6 @@ export default class MapComp extends React.Component {
 							    maxPriceLevel: this.props.maxPrice,
 							    types: resTypes},
 							  (results, status) => {
-							  	console.log("results: ", results)
-							  	console.log("min and max: ", this.props.minPrice, this.props.maxPrice)
 							  	if (status === google.maps.places.PlacesServiceStatus.OK) {
 							  		results.forEach(place => {
 							  			let marker = new google.maps.Marker({

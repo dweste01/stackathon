@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './Navbar'
-import WaterGraph from './WaterGraph'
 import MapComp from './Map'
 
 

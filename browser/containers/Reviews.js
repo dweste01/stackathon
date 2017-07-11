@@ -9,14 +9,15 @@ export default class ResReviews extends React.Component {
 	}
 
 	render() {
-		const restaurant = this.props.selectedRes;
-		console.log(this.props)
+		const restaurant = this.props.selectedRes || {};
 		let dollars = ""
-		let num = restaurant.price_level;
-		while (num) {
-			dollars += "$";
-			num--;
-		}
+		// if (restaurant) {
+			let num = restaurant.price_level;
+			while (num) {
+				dollars += "$";
+				num--;
+			}
+		// }
 		return (<div className="panel panel-default" style={{'marginTop': 20}}>
 				  <div className="panel-body">
 				  {
@@ -46,5 +47,4 @@ export default class ResReviews extends React.Component {
 				  </div>
 				</div>)
 	}
-							// <Insta latLng=restaurant />
 }

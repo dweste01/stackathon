@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { hashHistory } from 'react-router';
 import {connect} from 'react-redux';
 import MyApp from './AppComponent'
 import {toggleDeliveryAction, selectRestaurant,
@@ -27,7 +26,6 @@ const mapDispatchToProps = (dispatch) => {
 			let res = {};
 			axios.get(`/api/googlePlace/${id}`)
 			.then(result => {
-				console.log('result back from google places: ', result.data)
 				res = result.data.result;
 				dispatch(selectRestaurant(res))
 			})

@@ -7,8 +7,6 @@ export default class Navbar extends React.Component {
 	}
 
 	render() {
-		console.log('rendering navbar, props: ', this.props)
-
 		return (
 			<div id='myNav'>
 				<div className="row my-navbar">
@@ -56,7 +54,7 @@ export default class Navbar extends React.Component {
 					     		}
 							</div><br />
 							<span>Max Price: </span>
-							<div className="btn-group btn-group-xs dollar-button-group" style={{'marginTop': 3}} role="group" aria-label="...">
+							<div id="max" className="btn-group btn-group-xs dollar-button-group" style={{'marginTop': 3}} role="group" aria-label="...">
 					     		{
 					     			(this.props.minPrice > 1) ? <button disabled type="button" onClick={() => {this.props.toggleMaxPrice(1)}} style={{'color': '#00ff77'}} className="btn btn-default dollar-button">$</button>
 					     			: (this.props.maxPrice==1) ? <button type="button" onClick={() => {this.props.toggleMaxPrice(1)}} style={{'color': '#00ff77'}} className="btn btn-default active-dollar-button">$</button>
