@@ -25,18 +25,37 @@ describe('Price filters', function() {
 	})
 
 	it('if min price is chosen, max price must be greater', () => {
-		let nav = shallow(<Navbar />);
-		testStore.dispatch({type: "SET_MIN_PRICE", minPrice: 3})
+		let nav = shallow(<Navbar minPrice={3} />);
 		let maxButton1 = nav.find("#max").children().get(0)
-		console.log(maxButton1)
-		// make a wrapper for the ReactElement that gets returned
-		let buttonwrapper = shallow(maxButton1);
+		let maxButton2 = nav.find("#max").children().get(1)
+		let maxButton3 = nav.find("#max").children().get(2)
+		let maxButton4 = nav.find("#max").children().get(3)
+		let maxButton1wrapper = shallow(maxButton1);
+		let maxButton2wrapper = shallow(maxButton2);
+		let maxButton3wrapper = shallow(maxButton3);
+		let maxButton4wrapper = shallow(maxButton4);
 
-		expect(buttonwrapper).to.be.disabled();
+		expect(maxButton1wrapper).to.be.disabled();
+		expect(maxButton2wrapper).to.be.disabled();
+		expect(maxButton3wrapper).to.not.be.disabled();
+		expect(maxButton4wrapper).to.not.be.disabled();
     });
 
 	it('if max price is chosen, min price must be less', () => {
+		let nav = shallow(<Navbar maxPrice={2} />);
+		let minButton1 = nav.find("#min").children().get(0)
+		let minButton2 = nav.find("#min").children().get(1)
+		let minButton3 = nav.find("#min").children().get(2)
+		let minButton4 = nav.find("#min").children().get(3)
+		let minButton1wrapper = shallow(minButton1);
+		let minButton2wrapper = shallow(minButton2);
+		let minButton3wrapper = shallow(minButton3);
+		let minButton4wrapper = shallow(minButton4);
 
+		expect(minButton1wrapper).to.not.be.disabled();
+		expect(minButton2wrapper).to.not.be.disabled();
+		expect(minButton3wrapper).to.be.disabled();
+		expect(minButton4wrapper).to.be.disabled();
 	})
 })
 
